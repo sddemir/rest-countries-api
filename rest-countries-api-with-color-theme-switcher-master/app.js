@@ -23,8 +23,8 @@ search.addEventListener('keypress', async function(e) {
         const response = await axios.get(`https://restcountries.com/v3.1/name/${searchName}`);
         // countryData.forEach(country=>{
             const card={
-                countryFlag:response.data[0].flags.png,
-                countryName:response.data[0].name.common,
+                countryFlag:response.data[0].flags.svg,
+                countryName:response.data[0].name.official,
                 countryPop:response.data[0].population,
                 countryRegion:response.data[0].continents[0],
                 countryCapital:response.data[0].capital[0]};
