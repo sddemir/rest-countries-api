@@ -14,16 +14,31 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Custom Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+<style>
+    body{
+        background-color:hsl(0, 0%, 98%);
+    }
+    .srchinput{
+        height:40px;
+        font-size: smaller;
+        background-color: hsl(0, 0%, 52%);
+    }
+    /* .srchinput::placeholder{
+        margin-left: 10px;
+    } */
+</style>
 </head>
 <body id="bodyody">
-    <nav class="navbar-nav bg-body-tertiary">
+    <nav class="navbar navbar-nav bg-body-tertiary p-0">
         <div class="container-fluid">
-        <div class="nav-item navbar-text navbar-brand"><i class="fa-regular fa-moon"></i> Dark Mode</div>
+            <div class="nav-item navbar-text navbar-brand p-0 mt-2"><p>Where in the world?</p></div>
+        <div class="nav-item navbar-text navbar-brand p-0 navbar-link ms-auto">
+                <i class="fa-regular fa-moon"></i> Dark Mode</ul></div>  
     </div>
     </nav>
     <div class="container-fluid">
         <div class="content-wrapper">
-    <i class="fa-solid fa-magnifying-glass"></i> <input type="text" id="search" value="Search for a country">
+   <input class="srchinput rounded border-0" size="40em" type="text" id="search" placeholder="&#xF002; Search for a country..." style="font-family:Arial, FontAwesome" />
     <select name="reigons" id="reigons" class="form-select form-select-sm">
         <option value="Filter by Region">Filter by Region</option>
         <option value="Africa">Africa</option>
@@ -32,7 +47,6 @@
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>
     </select>
-</div>
 </div>
     <script src="app.js"></script>
 </body>
