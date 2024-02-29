@@ -7,9 +7,9 @@ search.addEventListener('keypress', async function(e) {
             const mom = search.value;
             const response = await axios.get(`https://restcountries.com/v3.1/name/${mom}`);
             console.log(response.data);
-            const div = document.createElement("div");
-            div.innerHTML= response.data[0].altSpellings[2];
-            document.body.append(div);
+//             const div = document.createElement("div");
+//             div.innerHTML= response.data[0].altSpellings[2];
+//             document.body.append(div);
         }
     } catch (error) {
         console.log('nope', error);
@@ -30,12 +30,15 @@ search.addEventListener('keypress', async function(e) {
                 countryCapital:response.data[0].capital[0]};
             const div = document.createElement("div");
             div.innerHTML= `<div class="row justify-content-center searchCountry">
+            <div class="col-md-4">
             <div class="card">
             <img src="${card.countryFlag}">            
             <h3>${card.countryName}</h3>
             <p>Population: ${card.countryPop}</p>
             <p>Region: ${card.countryRegion}</p>
-            <p>Capital: ${card.countryCapital}</p>`
+            <p>Capital: ${card.countryCapital}</p></div>
+            </div>
+            </div>`
             // [card.countryFlag, card.countryName, card.countryPop, card.countryRegion, card.countryCapital];
                 document.body.append(div);
         // })            
