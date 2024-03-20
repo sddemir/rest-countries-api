@@ -54,12 +54,19 @@ async function urmom(){
         const all = await axios.get(`https://restcountries.com/v3.1/all/`);
      for(let i=0; i<50; i++){
             const divAll = document.createElement("div");
+            const cardALL={con:all.data[i].flags.svg};
+            divAll.innerHTML= `<div class="row justify-content-center searchCountry">
+        <div class="col-md-4">
+        <div class="card">
+        <img src="${cardALL.con}">            
+        </div>
+        </div>`
             // cuntry += all[i];
             console.log(all.data[i]);
             document.body.append(divAll);
         }
         const cardAll=
-        {countryFlag:a.data.flags.svg,
+        {countryFlag:all.data[i].flags.svg,
         countryName:all.data.name.official,
         countryPop:all.data.population,
         countryRegion:all.data.continents[0],
