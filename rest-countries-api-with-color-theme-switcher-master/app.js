@@ -51,21 +51,19 @@ search.addEventListener('keypress', async function(e) {
 //all the countries on the front page
 async function urmom(){
     try{
-        let cuntry=[];
-        const all = await axios.get(`https://restcountries.com/v3.1/all/${cuntry}`);
-        for(let i=0; i<10; i++){
-            // const divAll = document.createElement("div");
-            cuntry += all[i];
-            console.log(all.data);
+        const all = await axios.get(`https://restcountries.com/v3.1/all/`);
+     for(let i=0; i<50; i++){
+            const divAll = document.createElement("div");
+            // cuntry += all[i];
+            console.log(all.data[i]);
+            document.body.append(divAll);
         }
-        const cardAll=[
-            {
-            countryFlag:all.data.flags.svg,
-            countryName:all.data.name.official,
-            countryPop:all.data.population,
-            countryRegion:all.data.continents[0],
-            countryCapital:all.data.capital[0]}
-        ];
+        const cardAll=
+        {countryFlag:a.data.flags.svg,
+        countryName:all.data.name.official,
+        countryPop:all.data.population,
+        countryRegion:all.data.continents[0],
+        countryCapital:all.data.capital[0]}
         
         divAll.innerHTML= `<div class="row justify-content-center searchCountry">
         <div class="col-md-4">
@@ -77,10 +75,6 @@ async function urmom(){
         <p>Capital: ${cardAll.countryCapital}</p></div>
         </div>
         </div>`
-        cardAll.forEach(obj => {
-            console.log(obj.countryCapital);
-        })
-
         // [card.countryFlag, card.countryName, card.countryPop, card.countryRegion, card.countryCapital];
     }catch(error){
         console.log(`oh no ${error}`);
